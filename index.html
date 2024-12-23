@@ -16,11 +16,11 @@
   <head>
     <title>My Website</title>
   </head>    
- <h2><strong> Audio samples from "A Benchmark for Multi-speaker Anonymization" </a> </a></strong></h2>  
+ <h2><strong> Audio samples from "SecureSpeech: Prompt-based Speaker and Content Protection" </a> </a></strong></h2>  
   <h3>Paper:</h3>
-  <p> Submitted to IEEE Transactions on Information Forensics and Security.</p>
+  <p> Submitted to IEEE International Conference on Multimedia & Expo (ICME).</p>
   <h3>Authors: </h3>
-  Xiaoxiao Miao, Ruijie Hao, Chang Zeng, Xin Wang
+  Anonymous ICME submission
   <h3>Messages about Data: </h3>
   <ul>
 	  <li> English natural audios are from LibriSpeech-test-clean. It is the <a href="http://www.openslr.org/12/">Librispeech corpus</a>, which is made avaliable by Vassil Panayotov with the assistance of Daniel Povey <a href="https://creativecommons.org/licenses/by/4.0/">under an Attribution 4.0 International (CC BY 4.0) lisence.</a> </li>   
@@ -30,15 +30,14 @@
   <hr>
   <p>&nbsp;</p>
 
-  <h3> Abstract of "A Benchmark of Multi-speaker anonymization": </h3>
-  Privacy-preserving voice protection approaches primarily suppress privacy-related information derived from paralinguistic attributes while preserving the linguistic content. 
-  Existing solutions focus particularly on single-speaker scenarios. However, they lack practicality for real-world applications, i.e., multi-speaker scenarios. 
-  In this paper, we present an initial attempt to provide a multi-speaker anonymization benchmark by defining the task and evaluation protocol, proposing benchmarking solutions, and discussing the privacy leakage of overlapping conversations. 
-  Specifically, ideal multi-speaker anonymization should preserve the number of speakers and the turn-taking structure of the conversation, ensuring accurate context conveyance while maintaining privacy. 
-  To achieve that, a cascaded system uses spectral-clustering-based speaker diarization to aggregate the speech of each speaker and disentanglement-based speaker anonymization with a selection-based speaker anonymizer to conceal speaker privacy and preserve speech content. 
-  Additionally, we propose two conversation-level speaker vector anonymization methods to improve the utility further. Both methods aim to make the original and corresponding pseudo-speaker identities of each speaker unlinkable while preserving or even improving the distinguishability among pseudo-speakers in a conversation. 
-  The first method minimizes the differential similarity across speaker pairs in the original and anonymized conversations to maintain original speaker relationships in the anonymized version. The other method minimizes the aggregated similarity across anonymized speakers to achieve better differentiation between speakers. 
-  Experiments conducted on both non-overlap simulated and real-world datasets demonstrate the effectiveness of the multi-speaker anonymization system with the proposed speaker anonymizers. Additionally, we analyzed overlapping speech regarding privacy leakage and provide potential solutions.
+  <h3> SecureSpeech: Prompt-based Speaker and Content Protection": </h3>
+  Given the increasing privacy concerns from identity theft and the re-identification of speakers through content in the speech field, it is crucial to develop solutions that ensure both speaker identity protection and content preservation. 
+This paper proposes a prompt-based speech generation pipeline that ensures dual anonymization of both speaker identity and spoken content. This is addressed through
+1) generating a speaker identity unlinkable to source speaker, controlled by descriptors, and 
+2) replacing of sensitive content within original text using a name entity recognition model and a large language model.
+The pipeline utilizes the anonymized speaker identity and text to generate high-fidelity, privacy-friendly speech via a text-to-speech synthesis model.
+Experimental results demonstrates an achievement of significant privacy protection while maintaining a decent level of content retention and audio quality.
+This paper also investigates the impact of varying speaker descriptions on utility and privacy of generated speech to determine if potential biases.
   <p>&nbsp;</p>
   
   <h3> Simulatation Multi-speaker Anonymization using Real RTTM</h3>
