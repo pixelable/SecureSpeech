@@ -1,1 +1,437 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>LISASSL</title>
+  <style type="text/css">
+  </style>
+</head>
+
+<body>
+ 
+
+  <head>
+    <title>My Website</title>
+  </head>    
+ <h2><strong> Audio samples from "A Benchmark for Multi-speaker Anonymization" </a> </a></strong></h2>  
+  <h3>Paper:</h3>
+  <p> Submitted to IEEE Transactions on Information Forensics and Security.</p>
+  <h3>Authors: </h3>
+  Xiaoxiao Miao, Ruijie Hao, Chang Zeng, Xin Wang
+  <h3>Messages about Data: </h3>
+  <ul>
+	  <li> English natural audios are from LibriSpeech-test-clean. It is the <a href="http://www.openslr.org/12/">Librispeech corpus</a>, which is made avaliable by Vassil Panayotov with the assistance of Daniel Povey <a href="https://creativecommons.org/licenses/by/4.0/">under an Attribution 4.0 International (CC BY 4.0) lisence.</a> </li>   
+  </ul>
+
+ <p>&nbsp;</p>
+  <hr>
+  <p>&nbsp;</p>
+
+  <h3> Abstract of "A Benchmark of Multi-speaker anonymization": </h3>
+  Privacy-preserving voice protection approaches primarily suppress privacy-related information derived from paralinguistic attributes while preserving the linguistic content. 
+  Existing solutions focus particularly on single-speaker scenarios. However, they lack practicality for real-world applications, i.e., multi-speaker scenarios. 
+  In this paper, we present an initial attempt to provide a multi-speaker anonymization benchmark by defining the task and evaluation protocol, proposing benchmarking solutions, and discussing the privacy leakage of overlapping conversations. 
+  Specifically, ideal multi-speaker anonymization should preserve the number of speakers and the turn-taking structure of the conversation, ensuring accurate context conveyance while maintaining privacy. 
+  To achieve that, a cascaded system uses spectral-clustering-based speaker diarization to aggregate the speech of each speaker and disentanglement-based speaker anonymization with a selection-based speaker anonymizer to conceal speaker privacy and preserve speech content. 
+  Additionally, we propose two conversation-level speaker vector anonymization methods to improve the utility further. Both methods aim to make the original and corresponding pseudo-speaker identities of each speaker unlinkable while preserving or even improving the distinguishability among pseudo-speakers in a conversation. 
+  The first method minimizes the differential similarity across speaker pairs in the original and anonymized conversations to maintain original speaker relationships in the anonymized version. The other method minimizes the aggregated similarity across anonymized speakers to achieve better differentiation between speakers. 
+  Experiments conducted on both non-overlap simulated and real-world datasets demonstrate the effectiveness of the multi-speaker anonymization system with the proposed speaker anonymizers. Additionally, we analyzed overlapping speech regarding privacy leakage and provide potential solutions.
+  <p>&nbsp;</p>
+  
+  <h3> Simulatation Multi-speaker Anonymization using Real RTTM</h3>
+  <table border="1">
+    <tr>
+      <td width="120px">&nbsp;
+
+      </td>
+      <td colspan="1">
+        <blockquote>
+
+          <p align="center">2-SPK</p>
+
+        </blockquote>
+      </td>
+      <td colspan="1">
+        <blockquote>
+
+          <p align="center">3-SPK</p>
+
+        </blockquote>
+      </td>
+      <td colspan="1">
+        <blockquote>
+
+          <p align="center">4-SPK</p>
+
+        </blockquote>
+      </td>
+      <td colspan="1">
+        <blockquote>
+
+          <p align="center">5-SPK</p>
+
+        </blockquote>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div align="center">Natural</div>
+      </td>
+      <td>
+        <div style="width: 100%;text-align: center;padding-top: 4px;">DER=0</div>
+        <audio src="real_clean/ori/2300-131720_4446-2271.wav" controls="controls">
+          Your browser does not support the audio tag.
+        </audio></td>
+      <td>
+        <div style="width: 100%;text-align: center;padding-top: 4px;">DER=14.11</div>
+        <audio src="real_clean/ori/6829-68771_237-134493_1995-1837.wav" controls="controls">
+          Your browser does not support the audio tag.
+        </audio></td>
+      <td><div style="width: 100%;text-align: center;padding-top: 4px;">DER=1.49</div>
+        <audio src="real_clean/ori/1995-1826_8555-284447_7021-79740_5142-36586.wav" controls="controls">
+          Your browser does not support the audio tag.
+        </audio></td>
+      <td><div style="width: 100%;text-align: center;padding-top: 4px;">DER=0.43</div>
+        <audio src="real_clean/ori/1089-134686_1580-141083_2300-131720_1284-1180_3570-5695.wav" controls="controls">
+          Your browser does not support the audio tag.
+        </audio></td>
+    </tr>
+    <tr>
+      <td>
+        <div align="center">Resynthesis</div>
+      </td>
+      <td>
+        <div style="width: 100%;text-align: center;padding-top: 4px;">DER=3.38</div>
+        <audio src="real_clean/res/2300-131720_4446-2271_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=14.80</div>
+      <audio src="real_clean/res/6829-68771_237-134493_1995-1837_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=0.91</div>
+      <audio src="real_clean/res/1995-1826_8555-284447_7021-79740_5142-36586_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=25.33</div>
+      <audio src="real_clean/res/1089-134686_1580-141083_2300-131720_1284-1180_3570-5695_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+
+    </tr>
+    <tr>
+      <td>
+        <div align="center">A_OHNN</div>
+      </td>
+      <td>
+        <div style="width: 100%;text-align: center;padding-top: 4px;">DER=28.18</div>
+        <audio src="real_clean/ohnn/2300-131720_4446-2271_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=14.80</div>
+      <audio src="real_clean/ohnn/6829-68771_237-134493_1995-1837_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=21.17</div>
+      <audio src="real_clean/ohnn/1995-1826_8555-284447_7021-79740_5142-36586_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=3.09</div>
+      <audio src="real_clean/ohnn/1089-134686_1580-141083_2300-131720_1284-1180_3570-5695_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+
+    </tr>
+    <tr>
+      <td>
+        <div align="center">A_select</div>
+      </td>
+      <td>
+        <div style="width: 100%;text-align: center;padding-top: 4px;">DER=28.18</div>
+        <audio src="real_clean/select/2300-131720_4446-2271_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=14.80</div>
+      <audio src="real_clean/select/6829-68771_237-134493_1995-1837_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=37.31</div>
+      <audio src="real_clean/select/1995-1826_8555-284447_7021-79740_5142-36586_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=48.07</div>
+      <audio src="real_clean/select/1089-134686_1580-141083_2300-131720_1284-1180_3570-5695_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    </tr>
+    <tr>
+      <td>
+        <div align="center">A_ds</div>
+      </td>
+      <td>
+        <div style="width: 100%;text-align: center;padding-top: 4px;">DER=14.57</div>
+        <audio src="real_clean/ds/2300-131720_4446-2271_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=1.07</div>
+      <audio src="real_clean/ds/6829-68771_237-134493_1995-1837_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=2.40</div>
+      <audio src="real_clean/ds/1995-1826_8555-284447_7021-79740_5142-36586_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=1.11</div>
+      <audio src="real_clean/ds/1089-134686_1580-141083_2300-131720_1284-1180_3570-5695_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+ 
+    </tr>
+    <tr>
+      <td>
+        <div align="center">A_as</div>
+      </td>
+      <td>
+        <div style="width: 100%;text-align: center;padding-top: 4px;">DER=27.86</div>
+        <audio src="real_clean/as/2300-131720_4446-2271_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=1.07</div>
+      <audio src="real_clean/as/6829-68771_237-134493_1995-1837_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=0.91</div>
+      <audio src="real_clean/as/1995-1826_8555-284447_7021-79740_5142-36586_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=1.11</div>
+      <audio src="real_clean/as/1089-134686_1580-141083_2300-131720_1284-1180_3570-5695_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+ 
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <h3> Simulatation Multi-speaker Anonymization using Predict RTTM</h3>
+  <table border="1">
+    <tr>
+      <td width="120px">&nbsp;
+
+      </td>
+      <td colspan="1">
+        <blockquote>
+
+          <p align="center">2-SPK</p>
+
+        </blockquote>
+      </td>
+      <td colspan="1">
+        <blockquote>
+
+          <p align="center">3-SPK</p>
+
+        </blockquote>
+      </td>
+      <td colspan="1">
+        <blockquote>
+
+          <p align="center">4-SPK</p>
+
+        </blockquote>
+      </td>
+      <td colspan="1">
+        <blockquote>
+
+          <p align="center">5-SPK</p>
+
+        </blockquote>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div align="center">Natural</div>
+      </td>
+      <td>
+        <div style="width: 100%;text-align: center;padding-top: 4px;">DER=8.07</div>
+        <audio src="predict_rttm/ori/4446-2271_2961-960.wav" controls="controls">
+          Your browser does not support the audio tag.
+        </audio></td>
+      <td>
+        <div style="width: 100%;text-align: center;padding-top: 4px;">DER=3.26</div>
+        <audio src="predict_rttm/ori/6829-68769_5683-32865_1580-141084.wav" controls="controls">
+          Your browser does not support the audio tag.
+        </audio></td>
+      <td>
+        <div style="width: 100%;text-align: center;padding-top: 4px;">DER=0.00</div>
+        <audio src="predict_rttm/ori/4446-2273_3575-170457_1580-141084_1284-1180.wav" controls="controls">
+          Your browser does not support the audio tag.
+        </audio></td>
+      <td>
+        <div style="width: 100%;text-align: center;padding-top: 4px;">DER=1.06</div>
+        <audio src="predict_rttm/ori/7127-75947_1320-122617_8555-284449_4077-13754_3570-5695.wav" controls="controls">
+          Your browser does not support the audio tag.
+        </audio></td>
+    </tr>
+    <tr>
+      <td>
+        <div align="center">Resynthesis</div>
+      </td>
+      <td>
+        <div style="width: 100%;text-align: center;padding-top: 4px;">DER=2.37</div>
+        <audio src="predict_rttm/res/4446-2271_2961-960_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=4.58</div>
+      <audio src="predict_rttm/res/6829-68769_5683-32865_1580-141084_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=13.18</div>
+      <audio src="predict_rttm/res/4446-2273_3575-170457_1580-141084_1284-1180_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=12.24</div>
+      <audio src="predict_rttm/res/7127-75947_1320-122617_8555-284449_4077-13754_3570-5695_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+
+    </tr>
+    <tr>
+      <td>
+        <div align="center">A_OHNN</div>
+      </td>
+      <td>
+        <div style="width: 100%;text-align: center;padding-top: 4px;">DER=34.48</div>
+        <audio src="predict_rttm/ohnn/4446-2271_2961-960_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=30.44</div>
+      <audio src="predict_rttm/ohnn/6829-68769_5683-32865_1580-141084_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=47.44</div>
+      <audio src="predict_rttm/ohnn/4446-2273_3575-170457_1580-141084_1284-1180_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=12.23</div>
+      <audio src="predict_rttm/ohnn/7127-75947_1320-122617_8555-284449_4077-13754_3570-5695_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+
+    </tr>
+    <tr>
+      <td>
+        <div align="center">A_select</div>
+      </td>
+      <td>
+        <div style="width: 100%;text-align: center;padding-top: 4px;">DER=33.77</div>
+        <audio src="predict_rttm/select/4446-2271_2961-960_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=19.63</div>
+      <audio src="predict_rttm/select/6829-68769_5683-32865_1580-141084_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=41.63</div>
+      <audio src="predict_rttm/select/4446-2273_3575-170457_1580-141084_1284-1180_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=38.03</div>
+      <audio src="predict_rttm/select/7127-75947_1320-122617_8555-284449_4077-13754_3570-5695_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+
+    </tr>
+    <tr>
+      <td>
+        <div align="center">A_ds</div>
+      </td>
+      <td>
+        <div style="width: 100%;text-align: center;padding-top: 4px;">DER=2.37</div>
+        <audio src="predict_rttm/ds/4446-2271_2961-960_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=1.94</div>
+      <audio src="predict_rttm/ds/6829-68769_5683-32865_1580-141084_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=13.18</div>
+      <audio src="predict_rttm/ds/4446-2273_3575-170457_1580-141084_1284-1180_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=11.01</div>
+      <audio src="predict_rttm/ds/7127-75947_1320-122617_8555-284449_4077-13754_3570-5695_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+
+    </tr>
+    <tr>
+      <td>
+        <div align="center">A_as</div>
+      </td>
+      <td>
+        <div style="width: 100%;text-align: center;padding-top: 4px;">DER=2.37</div>
+        <audio src="predict_rttm/as/4446-2271_2961-960_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=1.93</div>
+      <audio src="predict_rttm/as/6829-68769_5683-32865_1580-141084_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=0.00</div>
+      <audio src="predict_rttm/as/4446-2273_3575-170457_1580-141084_1284-1180_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+    <td>
+      <div style="width: 100%;text-align: center;padding-top: 4px;">DER=1.85</div>
+      <audio src="predict_rttm/as/7127-75947_1320-122617_8555-284449_4077-13754_3570-5695_gen.wav" controls="controls">
+        Your browser does not support the audio tag.
+      </audio></td>
+
+    </tr>
+  </table>
+
+ <p>&nbsp;</p>
+  <hr>
+  <p>&nbsp;</p>
+	
+   
+
+
+    
+   
+
+</body>
+
+</html>
