@@ -1,12 +1,12 @@
 # SecureSpeech
 This folder contains 2 separate tasks:
-1. Generation of Synthetic Audio Clips ()
-2. Replacement of Sensitive Words (NER) from Transcripts ()
+1. Replacement of Sensitive Words (NER) from Transcripts ([NER Replacement Usage](#replacement))
+2. Generation of Synthetic Audio Clips ([Generation Usage](#generation))
 
 ## Table of Contents
 - [Installation](#installation)
-- [Generation Usage](#generation)
 - [NER Replacement Usage](#replacement)
+- [Generation Usage](#generation)
 
 ## Installation
 1. Clone the repository:
@@ -22,24 +22,42 @@ git clone https://huggingface.co/datasets/asapp/slue
 
 ```
 Otherwise if using own data: 
-Add transcripts and NER instructions in Ori_Audio
+Add unique id, transcripts and NER instructions in Ori_Data, in .json as in the format below:
+[{
+    "id": "20171211-0900-PLENARY-4-en_20171211-17:01:30_3", 
+    "Transcript": "only his own group and the liberals support the declaration but six groups have refused it.",
+    "NER Instructions": "{'type': array(['QUANT', 'NORP'], dtype=object), 'start': array([64, 27], dtype=int32), 'length': array([3, 8], dtype=int32)}"
+}]
 
-3. Create a virtualenv then:
+3. Edit attributes lists as you fit within the attributes folder
+
+4. Create a virtualenv then:
 ```bash
  pip install -r requirements.txt
 ```
 Add your audio files in Original
-Make changes to the run.sh file according to your requirements
+Make changes to the run.sh file according to your requirements:
 
 ```bash
 bash Implementation/run.sh
 ```
+run.sh runs the following files:
 
 ## NER Replacement Usage
 This package is meant for using GPT to replace NER words according to instructions to increase privacy around transcripts used. The model used is: gpt-4o-mini. This programme is able to extract from .parquet files given that the column headers are "normalized_text" and "normalized_combined_ner" as modelled after SLUE-VoxPopuli transcripts..
+1. Insert OpenAI key 
+```bash
+    client = OpenAI(api_key="Insert OpenAI key")
+```
+
 1. Run for NER word replacement:
 ```bash
  python replace_ner.py
+```
+
+if use own .json file, change in run.sh to: 
+```bash
+ python replace_ner_json.py
 ```
 
 2. Enter .parquet file for analysis:
