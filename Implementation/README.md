@@ -61,7 +61,7 @@ E.g. Enter parquet file name: voxpopuli/voxpopuli/test-00000-of-00001.parquet
 Output is saved in ner_output.json.
 
 ## Generation Usage
-These packages generate synthetic audio files reading random transcripts from LibriSpeech ASR corpus. For each of the 34 specific speakers, 10 utterances is generated. For random speakers, 156 random speakers are generated using a random combination of gender, pitch, accent. And each of the random speakers are used to generate 10 utterances with varying pitch modulation, speaking rate, and channel condition. 
+These packages generate synthetic audio files reading random transcripts from LibriSpeech ASR corpus. A random speaker created from a random speaker description will voice the replaced_ner output transcripts given.
 
 1. Run for specific speaker generation: 
 ```bash
