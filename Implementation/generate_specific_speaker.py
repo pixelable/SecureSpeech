@@ -142,7 +142,7 @@ for transcripts in transcript_data:
         f.write(prompt)
         f.close()
     else:
-        print("Error: Generated audio array is empty or invalid.")
+        print("Error: Generated audio array is empty or invalid for " + identity)
         
     meta_data.append(meta)
 

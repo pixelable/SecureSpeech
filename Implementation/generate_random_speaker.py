@@ -133,7 +133,6 @@ meta_data = []
 for transcripts in transcript_data:
     meta = {}
     random_identity = random.choice(speaker_identity)
-    print(random_identity)
     random_gender = random_identity[0][0]
     random_accent = random_identity[0][1]
     random_pitch = random_identity[1]
@@ -169,7 +168,7 @@ for transcripts in transcript_data:
         f.write(prompt)
         f.close()
     else:
-        print("Error: Generated audio array is empty or invalid.")
+        print("Error: Generated audio array is empty or invalid:" + identity)
         
     meta_data.append(meta)
 
