@@ -50,18 +50,13 @@ This package is meant for using GPT to replace NER words according to instructio
     client = OpenAI(api_key="Insert OpenAI key")
 ```
 
-1. Run for NER word replacement:
-```bash
- python replace_ner.py
-```
-
 if use own .json file, change in run.sh to: 
 ```bash
  python replace_ner_json.py
 ```
 
-2. Enter .parquet file for analysis:
-E.g. Enter parquet file name: slue/voxpopuli/test-00000-of-00001.parquet
+2. Enter .parquet file for analysis in run.sh:
+E.g. Enter parquet file name: voxpopuli/voxpopuli/test-00000-of-00001.parquet
 
 Output is saved in ner_output.json.
 
@@ -70,17 +65,31 @@ These packages generate synthetic audio files reading random transcripts from Li
 
 1. Run for specific speaker generation: 
 ```bash
- python generate_specific_speaker.py
+ mkdir -p Specific_Speaker_Output
+
+python3 replace_ner.py "voxpopuli/voxpopuli/test-00000-of-00001.parquet" \
+	"Specific_Speaker_Output/ner_output.json" \
+
+python3 generate_specific_speaker.py "Specific_Speaker_Output/ner_output.json" \
+	"Specific_Speaker_Output" \
+	"Specific_Speaker_Output/full_generated_meta_info_random_speaker.json" \
 ```
-Output files are saved in specific_speaker:
+Output files are saved in specific_speaker_output:
 - Sound files is saved in .wav format 
 - Corresponding Transcript saved in .txt format
 
 2. Run for random speaker generation:
 ```bash
- python generate_random_speaker.py
+mkdir -p Random_Speaker_Output
+
+python3 replace_ner.py "voxpopuli/voxpopuli/test-00000-of-00001.parquet" \
+	"Random_Speaker_Output/ner_output.json" \
+
+python3 generate_random_speaker.py "Random_Speaker_Output/ner_output.json" \
+	"Random_Speaker_Output" \
+	"Random_Speaker_Output/full_generated_meta_info_random_speaker.json" \
 ```
-Output files are saved in random_speaker:
+Output files are saved in random_speaker_output:
 - Sound files is saved in .wav format 
 - Corresponding Transcript saved in .txt format
 
