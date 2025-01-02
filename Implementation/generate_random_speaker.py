@@ -164,8 +164,8 @@ for transcripts in transcript_data:
     if audio_arr is not None and audio_arr.size > 0:
         if len(audio_arr.shape) == 1:  # Convert mono to 2D array
             audio_arr = audio_arr.reshape(-1, 1)
-        sf.write(sys.argv[2] + "/"+ str(identity) + ".wav", audio_arr, model.config.sampling_rate)
-        f = open(sys.argv[2]+ "/"+ str(identity) + ".txt", "a")
+        sf.write(sys.argv[2] + "/"+ str(identity).replace(":", "") + ".wav", audio_arr, model.config.sampling_rate)
+        f = open(sys.argv[2]+ "/"+ str(identity).replace(":", "") + ".txt", "a")
         f.write(prompt)
         f.close()
     else:
