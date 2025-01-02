@@ -7,7 +7,7 @@ import string
 
 encoding = tiktoken.encoding_for_model("gpt-4o-mini")
 
-# client = OpenAI(api_key="API KEY HERE")
+client = OpenAI(api_key="API KEY HERE")
 GPT_MODEL = "gpt-4o-mini"
 
 data = pd.read_parquet(sys.argv[1], engine='pyarrow')
