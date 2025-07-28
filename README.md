@@ -1,6 +1,6 @@
 # SecureSpeech
 
-This repository contains the official implementation of our ISMIR 2025 paper
+This repository contains the official implementation of our [IJCB 2025 paper](https://arxiv.org/abs/2507.07799)
 
 SecureSpeech: Prompt-based Speaker and Content Protection
 
