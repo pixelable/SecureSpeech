@@ -11,7 +11,10 @@ by Hui Hui Belinda Soh; Xiaoxiao Miao; Xin Wang
 * Access the sample code in the `./Implementation` folder
 
 # Contact
-Jingjing Tang: jingjing.tang@qmul.ac.uk
+* Belinda Soh Hui Hui 1900900 at sit.singaporetech.edu.sg
+* Miao Xiaoxiao xiaoxiao.miao at dukekunshan.edu.cn
+* Wang Xin wangxin at nii.ac.jp
+
 
 # License
 The code is licensed under Apache License Version 2.0. The code will call pre-trained parlerTTS and OpenAI API.
