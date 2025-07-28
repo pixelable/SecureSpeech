@@ -3,6 +3,8 @@ This folder contains 2 separate tasks:
 1. Replacement of Sensitive Words (NER) from Transcripts ([NER Replacement Usage](#replacement))
 2. Generation of Synthetic Audio Clips ([Generation Usage](#generation))
 
+This project will call parlerTTS and OpenAI APIs. 
+
 ## Table of Contents
 - [Installation](#installation)
 - [NER Replacement Usage](#replacement)
